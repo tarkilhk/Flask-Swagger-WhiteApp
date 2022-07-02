@@ -25,41 +25,17 @@ myLogger.info("Flask app started")
 nameSpace = app.namespace('', description='Main APIs')
 
 
-@nameSpace.route('/hello')
+@nameSpace.route('/helloWorld')
 class Hello(Resource):
     def get(self):
         return 'Hello, World!'
 
-@nameSpace.route('/_setTargetImmunity')
-@nameSpace.param(name="targetImmunity",description="Immunity you want to reach")
-class SetTargetImmunity(Resource):
+@nameSpace.route('/postSomething')
+@nameSpace.param(name="something",description="Something")
+class Something(Resource):
     def post(self):
-        targetImmunity = request.args['targetImmunity']
-        return f"Your target immunity has been set to {targetImmunity}", 200
-
-@nameSpace.route('/_setVRFLevels')
-@nameSpace.param(name="VRF1Level",description="VRF 1 Level")
-@nameSpace.param(name="VRF1Level",description="VRF 2 Level")
-@nameSpace.param(name="VRF3Level",description="VRF 3 Level")
-@nameSpace.param(name="VRF4Level",description="VRF 4 Level")
-class SetVRFLevels(Resource):
-    def post(self):
-        VRF1Level = request.args['VRF1Level']
-        VRF2Level = request.args['VRF2Level']
-        VRF3Level = request.args['VRF3Level']
-        VRF4Level = request.args['VRF4Level']
-        return f"Levels set to [{VRF1Level}, {VRF2Level}, {VRF3Level}, {VRF4Level}]", 200
-
-@nameSpace.route('/giveMeMyAnswer')
-class GiveMeMyAnswer(Resource):
-    def post(self):
-
-        return "Ne ne", 200
-
-@nameSpace.route('/current_mode')
-class GetScheduledJobs(Resource):
-    def get(self):
-        return "TODO"
+        something = request.args['something']
+        return f"Here's something : {something}", 200
 
 if __name__ == '__main__':
     flask_app.run(host='0.0.0.0', port=5666)
