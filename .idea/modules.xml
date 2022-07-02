@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Flask-Swagger-WhiteApp.iml" filepath="$PROJECT_DIR$/.idea/Flask-Swagger-WhiteApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flask-swagger-docker-whiteapp.iml" filepath="$PROJECT_DIR$/.idea/flask-swagger-docker-whiteapp.iml" />
     </modules>
   </component>
 </project>
