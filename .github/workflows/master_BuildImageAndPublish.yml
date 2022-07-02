@@ -14,7 +14,7 @@ jobs:
           dockerfile: Dockerfile
       - name: Publish to Docker Registry
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v1
         with:
           repository: tarkilhk/flask-swagger-docker-whiteapp
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
