@@ -2,7 +2,7 @@
 
 FROM python:3.10-slim-buster
 
-WORKDIR /python-docker
+WORKDIR /flask-swagger-docker-whiteapp
 
 COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip
